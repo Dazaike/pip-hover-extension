@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "PiP Hover Button",
+  "icons": { "16": "icons/icon16.png", "32": "icons/icon32.png", "48": "icons/icon48.png", "128": "icons/icon128.png" },
+  "version": "1.0.0",
+  "description": "Faint picture-in-picture button on hover for large videos (400x400+).",
+  "permissions": ["activeTab", "scripting"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_title": "Toggle picture-in-picture" },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "all_frames": true,
+    "match_about_blank": true,
+    "run_at": "document_idle"
+  }]
+}

@@ -1,0 +1,4 @@
+*.zip
+.env
+*.log
+node_modules/
